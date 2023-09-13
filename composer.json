@@ -6,7 +6,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Jarca0123\\CzechPostLibrary": "src/",
+            "Jarca0123\\CzechPostLibrary": "src/"
         }
     }
 }
