@@ -91,7 +91,6 @@ class CzechPostB2B
             'parcelHeader' => $parcelHeader,
             'parcelDataList' => $parcelDataList,
         ));
-        echo $body;
         return $this->sendRequest('POST', 'sendParcels', $body);
     }
 
