@@ -1,0 +1,12 @@
+ {
+    "name": "jarca0123/czech-post-library",
+    "description": "API for Czech Post B2B",
+    "require": {
+        "php": ">=8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jarca0123\\CzechPostLibrary": "src/",
+        }
+    }
+}
