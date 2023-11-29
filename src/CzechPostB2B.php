@@ -115,6 +115,11 @@ class CzechPostB2B
         return $this->sendRequest('GET', 'sendParcels/idTransaction/' . $idTransaction, '', $returnCode);
     }
 
+    public function getParcelStatus($idParcel)
+    {
+        return $this->sendRequest('GET', 'parcelStatuses/current/idParcel/' . $idParcel, '');
+    }
+
     public function waitForGetSendParcelsResult($idTransaction)
     {
         //wait while status is not 202
