@@ -9,7 +9,10 @@ use Jarca0123\CzechPostLibrary\Objects;
 class CzechPostB2B
 {
 
-    private $apiUrl = 'https://b2b-test.postaonline.cz:444/restservices/ZSKService/v1/';
+    private $testApiUrl = 'https://b2b-test.postaonline.cz:444/restservices/ZSKService/v1/';
+    private $productionApiUrl = 'https://b2b.postaonline.cz:444/restservices/ZSKService/v1/';
+
+    private $apiUrl;
 
     private $apiToken;
     private $secretKey;
@@ -17,13 +20,14 @@ class CzechPostB2B
     private $customerID;
     private $customerCardID;
 
-    function __construct($apiToken, $secretKey, $postCode, $customerID, $customerCardID)
+    function __construct($apiToken, $secretKey, $postCode, $customerID, $customerCardID, $testing = false)
     {
         $this->apiToken = $apiToken;
         $this->secretKey = $secretKey;
         $this->postCode = $postCode;
         $this->customerID = $customerID;
         $this->customerCardID = $customerCardID;
+        $this->apiUrl = $testing ? $this->testApiUrl : $this->productionApiUrl;
     }
 
     private function sendRequest($method, $url, $body, $returnCode = false)
