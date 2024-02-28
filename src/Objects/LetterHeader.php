@@ -1,4 +1,4 @@
-<?
+<?php
 namespace Jarca0123\CzechPostLibrary\Objects;
 
 class LetterHeader extends ApiObject {
